@@ -1,0 +1,19 @@
+/* sriracha-regular - latin */
+@font-face {
+  font-family: 'Sriracha';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sriracha'),
+    url(/fonts/sriracha-v5-latin-regular.woff2) format('woff2'), /* Super Modern Browsers */
+    url(/fonts/sriracha-v5-latin-regular.woff) format('woff'), /* Modern Browsers */
+    url(/fonts/sriracha-v5-latin-regular.ttf) format('truetype'), /* Safari, Android, iOS */
+    url(/fonts/sriracha-v5-latin-regular.svg#Sriracha) format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Wotfard';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Wotfard'), url(/fonts/wotfard.woff2) format('woff2');
+}
