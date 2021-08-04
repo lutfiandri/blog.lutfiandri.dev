@@ -1,0 +1,12 @@
+import Layout from '../../layouts/post'
+
+export const meta = {
+  title: 'Markdown/MDX with Next.js',
+  author: 'Lee Robinson'
+}
+
+I **love** using [Next.js](https://nextjs.org/)
+
+![Image](https://ik.imagekit.io/lutfiandri/webcomic-kesatria/1)
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
