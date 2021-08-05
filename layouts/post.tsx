@@ -1,6 +1,6 @@
 import { MDXProvider } from '@mdx-js/react'
 import { ReactNode } from 'react'
-import { Image, Header, Text } from '../components/ui'
+import { Image, Header, Text, CodeBlock } from '../components/ui'
 import Head from 'next/head'
 import { PostMeta } from '../types/meta'
 import { Title, Container } from '../components/part/post'
@@ -21,6 +21,8 @@ const components = {
   p: Text.P,
   em: Text.Em,
   a: Text.A,
+  pre: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
+  code: CodeBlock,
 }
 
 interface Props {

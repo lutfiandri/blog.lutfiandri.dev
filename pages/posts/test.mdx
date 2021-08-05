@@ -271,11 +271,17 @@ ampersands and angle brackets. For example, this:
         &copy; 2004 Foo Corporation
     </div>
 
+```html
+<div class="footer">
+    &copy; 2004 Foo Corporation
+</div>
+```
+
 Regular Markdown syntax is not processed within code blocks. E.g.,
 asterisks are just literal asterisks within a code block. This means
 it's also easy to use Markdown to write about Markdown's own syntax.
 
-```
+```typescript
 tell application "Foo"
     beep
 end tell

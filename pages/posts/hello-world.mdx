@@ -13,6 +13,43 @@ export const meta = {
 
 I **love** *using* [Next.js](https://nextjs.org/)
 
+
+```typescript
+// naiesrtn
+import { MDXProvider } from '@mdx-js/react'
+import { ReactNode } from 'react'
+import { Image, Header, Text, CodeBlock } from '../components/ui'
+import Head from 'next/head'
+import { PostMeta } from '../types/meta'
+import { Title, Container } from '../components/part/post'
+
+interface ImgProps {
+  src: string
+  alt: string
+}
+
+const components = {
+  img: Image,
+  h1: Header.H1,
+  h2: Header.H2,
+  h3: Header.H3,
+  h4: Header.H4,
+  h5: Header.H5,
+  h6: Header.H6,
+  p: Text.P,
+  em: Text.Em,
+  a: Text.A,
+  pre: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
+  code: CodeBlock,
+}
+```
+
+```nginx
+server {
+
+}
+```
+
 If you only follow guided resources, you'll wind up in *tutorial hell*. You won't develop the problem-solving skills needed to succeed as a developer. When you try to build your own project, you won't know where to start. It will feel like you've spent so much time practicing without developing any tangible, practical skills.
 
 # The Big Idea
