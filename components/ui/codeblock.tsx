@@ -1,14 +1,12 @@
-import Highlight, {
-  defaultProps,
-  Language,
-  RenderProps,
-} from 'prism-react-renderer'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
+import dracula from 'prism-react-renderer/themes/dracula'
+import vsDark from 'prism-react-renderer/themes/vsDark'
 import { renderToString } from 'react-dom/server'
 import { ReactElement } from 'react'
 import styles from './codeblock.module.sass'
 
 interface Props {
-  children: ReactElement
+  children: string
   className: string
 }
 
@@ -23,30 +21,17 @@ export function CodeBlock(props: Props) {
   return (
     <Highlight
       {...defaultProps}
-      code={renderToString(props.children).trim()}
+      code={props.children.trim()}
       language={language}
+      theme={vsDark}
     >
-      {(rprops: RenderProps) => (
-        <pre
-          className={`${rprops.className} ${styles.codeblock}`}
-          style={{ ...rprops.style }}
-        >
-          {rprops.tokens.map((line, i: number) => (
-            <div key={i} {...rprops.getLineProps({ line, key: i })}>
-              {line.map((token, key) => {
-                // top => tokenOutputProps
-                const top = rprops.getTokenProps({ token, key })
-                const spanHtml = { __html: top.children }
-
-                return (
-                  <span
-                    key={key}
-                    className={top.className}
-                    style={top.style}
-                    dangerouslySetInnerHTML={spanHtml}
-                  />
-                )
-              })}
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={`${className} ${styles.codeblock}`} style={style}>
+          {tokens.map((line, i) => (
+            <div key={i} {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span key={i} {...getTokenProps({ token, key })} />
+              ))}
             </div>
           ))}
         </pre>
