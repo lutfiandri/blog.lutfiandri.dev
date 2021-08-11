@@ -1,14 +1,9 @@
 import { MDXProvider } from '@mdx-js/react'
 import { ReactNode } from 'react'
-import { Image, Header, Text, CodeBlock, Blockquote } from '../components/ui'
+import { Image, Header, Text, CodeBlock, Blockquote } from '@/components/ui'
 import Head from 'next/head'
-import { PostMeta } from '../types/meta'
-import { Title, Container } from '../components/part/post'
-
-interface ImgProps {
-  src: string
-  alt: string
-}
+import { PostMeta } from '@/types/meta'
+import { Title, Container } from '@/components/part/post'
 
 const components = {
   img: Image,

@@ -1,8 +1,5 @@
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import dracula from 'prism-react-renderer/themes/dracula'
 import vsDark from 'prism-react-renderer/themes/vsDark'
-import { renderToString } from 'react-dom/server'
-import { ReactElement } from 'react'
 import styles from './codeblock.module.sass'
 
 interface Props {
