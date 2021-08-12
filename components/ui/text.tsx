@@ -26,4 +26,16 @@ function A(props: AProps) {
   )
 }
 
-export const Text = { P, Em, A }
+function Ul(props: Props) {
+  return <ul className={styles.ul}>{props.children}</ul>
+}
+
+function Ol(props: Props) {
+  return <ol className={styles.ol}>{props.children}</ol>
+}
+
+function Li(props: Props) {
+  return <li className={styles.li}>{props.children}</li>
+}
+
+export const Text = { P, Em, A, Ul, Ol, Li }
