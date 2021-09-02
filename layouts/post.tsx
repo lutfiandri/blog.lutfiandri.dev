@@ -1,14 +1,9 @@
 import { MDXProvider } from '@mdx-js/react'
 import { ReactNode } from 'react'
-import { Image, Header, Text, CodeBlock, Blockquote } from '../components/ui'
+import { Image, Header, Text, CodeBlock, Blockquote } from '@/components/ui'
 import Head from 'next/head'
-import { PostMeta } from '../types/meta'
-import { Title, Container } from '../components/part/post'
-
-interface ImgProps {
-  src: string
-  alt: string
-}
+import { PostMeta } from '@/types/meta'
+import { Title, Container } from '@/components/part/post'
 
 const components = {
   img: Image,
@@ -21,6 +16,9 @@ const components = {
   p: Text.P,
   em: Text.Em,
   a: Text.A,
+  ul: Text.Ul,
+  ol: Text.Ol,
+  li: Text.Li,
   pre: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
   code: CodeBlock,
   blockquote: Blockquote,
@@ -39,6 +37,12 @@ export default function Post(props: Props): JSX.Element {
     <>
       <Head>
         <title>{props.meta.title}</title>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+          integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
+          crossOrigin="anonymous"
+        />
       </Head>
       <MDXProvider components={components}>
         <main>
