@@ -13,6 +13,6 @@ module.exports = withMDX({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   images: {
-    domains: ['ik.imagekit.io'],
+    domains: ['ik.imagekit.io', 'drive.google.com'],
   },
 })
